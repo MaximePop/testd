@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ressources en Humanité Numérique</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/rss-parser/dist/rss-parser.min.js"></script>
+  <script src="https://www.zotero.org/support/dev/client_api/citationstyleresults.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="navbar">
+  <a href="accueil.html" target="_blank" >Accueil</a>
+  <div class="dropdown">
+    <a href="index.html" class="dropbtn" target="_blank">Ressources sur les Humanités Numériques</a>
+  </div>
+
+  <div class="dropdown">
+    <a href="digit_hum.html" class="dropbtn">Digit_Hum</a>
+    <div class="dropdown-content">
+      <a href="https://digithum.huma-num.fr/" target="_blank">Présentation</a>
+      <a href="https://digithum.huma-num.fr/atelier/" target="_blank">Ateliers</a>
+      <a href="https://digithum.huma-num.fr/enquete/" target="_blank">Enquête</a>
+      <a href="https://digithum.huma-num.fr/portraits/" target="_blank">Portraits</a>
+      <a href="https://digithum.huma-num.fr/ressources/" target="_blank">Ressources</a>
+      <a href="https://digithum.huma-num.fr/portfolio/" target="_blank">Portfolio</a>
+    </div>
+  </div>
+  
+  <div class="dropdown">
+    <a href="eveille.html" class="dropbtn">Eveille</a>
+    <div class="dropdown-content">
+      <a href="https://eveille.hypotheses.org/presentation-du-projet-eveille" target="_blank">Présentation</a>
+      <a href="https://eveille.hypotheses.org/formation-humanites-numeriques" target="_blank">Formation</a>
+      <a href="https://eveille.hypotheses.org/manifestations" target="_blank">Manifestations et Ateliers</a>
+      <a href="https://eveille.hypotheses.org/projets-en-cours" target="_blank">Projets</a>
+      <a href="https://eveille.hypotheses.org/ressources-2" target="_blank">Ressources</a>
+      <a href="https://eveille.hypotheses.org/matiere-a-penser" target="_blank">Matière à penser</a>
+    </div>
+
+
+  </div>
+  
+  <div class="grid-container">
+    <div class="container">
+      <h1 class="title-hover" style="font-weight: bold;">Ressources sur les Humanités Numériques.</h1>
+      <h1 class="title-hover" style="font-weight: bold; font-size: 12px;">Site créé par Maxime Popineau, étudiant en 2ème année de Master Humanité Numérique, en juillet 2023.</h1>
+    </div>
+  </div>
+   
+  <div class="w3-row-padding w3-white w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1 style="font-weight: bold;">Catégorisation des ressources par mots-clés.</h1>
+        <h5 class="w3-padding-32">Les ressources sont disponibles sous forme de pop-up lorsque vous passez votre souris sur le nom de la catégorie. Il est nécessaire d'autoriser les pop-ups dans votre navigateur pour obtenir les ressources dans le tableau. </h5>
+        <p class="w3-text-grey">La liste des mots-clés est une liste commune à Digit_Hum et à Eveille provenant de la bibliothèque commune Zotero.</p>
+
+        <table id="table">
+          <tr>
+            <td class="table-cell" style="background-color: lightskyblue; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList23', 'popup-border-lightskyblue')" onmouseover="changeColor(this)">Acquisition</h3>
+              <ul id="itemList23" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: gold; color: white;">
+              <h3 class="link" onclick="openLinksInPopup('itemList2', 'popup-border-gold')" onmouseover="changeColor(this)">Analyse</h3>
+              <ul id="itemList2" style="display: none;">
+                <li><h1>Analyse du web</h1></li>
+                <ul id="itemList3"></ul>
+                <li><h1>Analyse et traitement sémantique</h1></li>
+                <ul id="itemList4"></ul>
+              </ul>
+            </td>
+            <td class="table-cell" style="background-color: darkcyan; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList27', 'popup-border-darkcyan')" onmouseover="changeColor(this)">Art et culture</h3>
+              <ul id="itemList27" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: orange; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList6', 'popup-border-orange')" onmouseover="changeColor(this)">Bibliothèque numérique</h3>
+              <ul id="itemList6" style="display: none;"></ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell" style="background-color: #029980; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList11', 'popup-border-popup-border-tealgreen')" onmouseover="changeColor(this)">Cartographie et visualisation</h3>
+              <ul id="itemList11" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: red; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList8', 'popup-border-red')" onmouseover="changeColor(this)">Diffusion</h3>
+              <ul id="itemList8" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: darkred; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList9', 'popup-border-darkred')" onmouseover="changeColor(this)">Ecosophie</h3>
+              <ul id="itemList9" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: pink; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList10', 'popup-border-pink')" onmouseover="changeColor(this)">Ecriture scientifique</h3>
+              <ul id="itemList10" style="display: none;"></ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell" style="background-color: dodgerblue; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList11', 'popup-border-dodgerblue')" onmouseover="changeColor(this)">Edition numérique</h3>
+              <ul id="itemList11" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: teal; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList13', 'popup-border-teal')" onmouseover="changeColor(this)">Enseignement, formation et recherche</h3>
+              <ul id="itemList13" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: limegreen; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList5', 'popup-border-limegreen')" onmouseover="changeColor(this)">Environnement collaboratif</h3>
+              <ul id="itemList5" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: blueviolet; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList15', 'popup-border-blueviolet')" onmouseover="changeColor(this)">Fondamentaux</h3>
+              <ul id="itemList15" style="display: none;"></ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell" style="background-color: purple; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList14', 'popup-border-purple')" onmouseover="changeColor(this)">Histoire et société</h3>
+              <ul id="itemList14" style="display: none;"></ul>
+              </td>
+              <td class="table-cell" style="background-color: forestgreen; color: white; padding: 10px;">
+                <h3 class="link" onclick="openLinksInPopup('itemList15', 'popup-border-forestgreen')" onmouseover="changeColor(this)">Ingénierie</h3>
+                <ul id="itemList15" style="display: none;"></ul>
+              </td>
+
+            </td>
+            <td class="table-cell" style="background-color: lightsalmon; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList25', 'popup-border-lightsalmon')" onmouseover="changeColor(this)">Langage informatique</h3>
+              <ul id="itemList25" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: orangered; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList16', 'popup-border-orangered')" onmouseover="changeColor(this)">Manifestation</h3>
+              <ul id="itemList16" style="display: none;"></ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="table-cell" style="background-color: lightslategray; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList26', 'popup-border-lightslategray')" onmouseover="changeColor(this)">Numésthésie</h3>
+              <ul id="itemList26" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: magenta; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList21', 'popup-border-magenta')" onmouseover="changeColor(this)">Ressources</h3>
+              <ul id="itemList21" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: royalblue; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList17', 'popup-border-royalblue')" onmouseover="changeColor(this)">Science ouverte</h3>
+              <ul id="itemList17" style="display: none;">
+                <li><h1>Base de données</h1></li>
+                <ul id="itemList18"></ul>
+                <li><h1>Stockage/Archivage</h1></li>
+                <ul id="itemList19"></ul>
+              </ul>
+            </td>
+            <td class="table-cell" style="background-color: lightseagreen; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList24', 'popup-border-lightseagreen')" onmouseover="changeColor(this)">Traitement automatique des langues</h3>
+              <ul id="itemList24" style="display: none;"></ul>
+            </td>
+          </tr>
+          <td class="table-cell" style="background-color: gray; color: white; padding: 10px;">
+            <h3 class="link" onclick="openLinksInPopup('itemList12', 'popup-border-gray')" onmouseover="changeColor(this)">Transcription</h3>
+            <ul id="itemList12" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: darkolivegreen; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList28','popup-border-darkolivegreen')" onmouseover="changeColor(this)"></h3>
+              <ul id="itemList28" style="display: none;"></ul>
+            </td>
+            <td class="table-cell" style="background-color: darkkhaki; color: white; padding: 10px;">
+              <h3 class="link" onclick="openLinksInPopup('itemList29','popup-border-darkhaki')" onmouseover="changeColor(this)"></h3>
+              <ul id="itemList29" style="display: none;"></ul>
+              </td>
+              <td class="table-cell" style="background-color: lightcoral; color: white; padding: 10px;">
+                <h3 class="link" onclick="openLinksInPopup('itemList20', 'popup-border-lightcoral')" onmouseover="changeColor(this)">Veille</h3>
+                <ul id="itemList20" style="display: none;"></ul>
+              </td>
+          
+          
+              </td>
+          </tr>
+        </table>
+        
+        <div class="w3-content">
+          <div class="w3-twothird">
+            <h1 style="font-weight: bold;">Rechercher des mots-clés dans les titres</h1>
+            <h5 class="w3-padding-32">La barre de recherche vous permet de chercher des mots-clés dans le titre des ressources présentes dans la bibliothèque Zotero.</h5>
+      
+            <p class="w3-text-grey"> L'objectif est d'indexer les ressources pour qu'elles soient le plus facilement accessible. </p>
+            <h1>Barre de recherche</h1>
+            <input type="text" id="searchInput" placeholder="Rechercher par titre">
+            <button onclick="searchItems()">Rechercher</button>
+            <h1>Résultats</h1>
+            <ul id="myItemList1"></ul>
+            <div class="pagination1">
+              <button onclick="updatePage('previous')">Précédent</button>
+              <span id="currentPage"></span>
+              <button onclick="updatePage('next')">Suivant</button>
+            </div>
+
+              <h1>Mots-clés</h1>
+              <div id="keyword-cloud"></div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+        
+    </div>
+  </div>
+  </div>
+
+
+<div>
+
+
+        
+        
+
+
+        <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+        <div class="w3-content">
+          <div class="w3-twothird">
+            <h1 style="font-weight: bold;">Tags de la collection Zotero</h1>
+            <h5 class="w3-padding-32">Les tags sont les tags présents dans la collection Zotero. Ils permettent à l'utilisateur de trouver des ressources par thématiques.</h5>
+      
+            <p class="w3-text-grey"> L'objectif est d'indexer les ressources pour qu'elles soient le plus facilement accessible. </p>
+            <div id="tagList"></div>
+            <h1>Résultats</h1>
+            <ul id="myItemList"></ul>
+
+</div>
+  
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+body,h1, h5 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+
+    .title-hover {
+      color: black;
+      text-decoration: none;
+    }
+    .button span:after {
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: opacity 0.5s;
+    }
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    .button:hover span {
+      padding-right: 25px;
+    }
+    .button img {
+      transition: transform 0.3s;
+      filter: none; /* Remove the grayscale filter */
+    }
+    .button:hover img {
+      transform: scale(1.1);
+    }
+  
+  
+    header {
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .navbar {
+      margin-bottom: 40px;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: black; /* Change the color to black */
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      font-family: "Fuse Regular", sans-serif;
+    }
+  
+    .navbar a:hover {
+      background-color: #D3D3D3;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    a:hover {
+      font-weight: bold;
+    }
+
+.container {
+  background-color: lightgrey;
+  padding: 16px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.second-grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 16px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%; /* Modification : taille réduite de l'image */
+  margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title-hover {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.title-hover:hover {
+  font-weight: bold;
+}
+
+.hover-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: scale(1.1);
+}
+
